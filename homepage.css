@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
+
+body{
+	height: 100%;
+	width: 100%;
+}
+
+html{
+	background: url(images/bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+h1{
+	font-family: Amatic SC;
+	font-size: 85px;
+	color: black;
+	margin-left: 25%;
+	margin-top: 10%;
+}
+
+
+.login{
+	font-family: Amatic SC;
+	font-size: 25px;
+	font-weight: bold;
+	bgcolor: white; 
+	margin-left: -34%;
+	cellpadding: 12; 
+	border: 1;
+}
+
+#buttontext{
+	font-family: Amatic SC;
+	font-size: 25px;
+	font-weight: bold;
+}
