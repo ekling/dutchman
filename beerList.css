@@ -1,8 +1,13 @@
 #cart {
+  width: 370px;
+  height: 400px;
+  float: left;
+}
+
+#cartList {
   width: 360px;
   height: 300px;
   float: left;
-  margin-left: 20px;
   overflow-y: auto;
   border: 2px solid black;
 }
@@ -16,18 +21,61 @@
   display: table;
 }
 
+#cartSumText {
+  width: auto;
+  height: 20px;
+  float: left;
+  margin-left: 8px;
+  margin-top: 15px;
+}
+
+#cartSumAmount {
+  width: auto;
+  height: 20px;
+  float: left;
+  margin-left: 8px;
+  margin-top: 15px;
+}
+
 #beerList {
-  width: 300px;
+  width: 305px;
   height: 600px;
   overflow-y: scroll;
   float: left;
 }
 
+.beerAddRemove {
+  width: 25px;
+  height: 50px;
+  float: right;
+  margin-right: 4px;
+}
+
 .beerRemove {
   width: 20px;
   height: 20px;
-  margin-right: 4px;
+  margin-top: 2px;
+  text-align: center;
+  float: right;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.beerAdd {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  text-align: center;
+  float: right;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.beerAddList {
+  width: 20px;
+  height: 20px;
   margin-top: 14px;
+  margin-right: 4px;
   text-align: center;
   float: right;
   cursor: pointer;
@@ -45,6 +93,12 @@
   border: 2px solid black;
   margin: 2px;
   float: left;
+  transition: height 1s;
+  overflow: hidden;
+}
+
+.beerItem.expanded {
+  height: 100px;
 }
 
 .beerCartItem .beerPubPrice{
@@ -62,16 +116,39 @@ width: auto;
 
 .beerName {
   width: 80%;
-  height: 50px;
+  height: 25px;
   float: left;
   margin-top: 15px;
 }
 
 .beerPubPrice {
   width: auto;
-  height: auto;
+  height: 25px;
   float: left;
   margin-top: 15px;
+}
+
+.beerCategory {
+  width: 100px;
+  height: 25px;
+  float: left;
+  margin-top: 15px;
+}
+
+.beerCountry {
+  width: 100px;
+  height: 25px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 7px;
+}
+
+.beerAlc{
+  width: 40px;
+  height: 25px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 7px;
 }
 
 .beerCount {
