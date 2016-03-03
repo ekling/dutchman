@@ -1,0 +1,16 @@
+{
+    "sv": {
+        "welcome": "välkommen",
+        "username": "Användare",
+        "password": "Lösenord",
+        "guest_login" : "Logga in som gäst",
+        "login": "Logga in"
+    },
+    "en": {
+        "welcome": "Welcome",
+        "username": "Username",
+        "password": "Password",
+        "guest_login": "Login as guest",
+        "login": "Login"
+    }
+}
