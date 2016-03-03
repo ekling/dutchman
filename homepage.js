@@ -30,3 +30,7 @@ function clicked() {
 		window.alert("Incorrect username or password!");
 	}
 }
+
+function guest() {
+	window.alert("You are logged in as a guest!");
+}
