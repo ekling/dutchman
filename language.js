@@ -4,7 +4,7 @@
 //to the set language
 $( document ).ready(function() {
     lang = get_language();
-	$.getJSON("language_strings.json", function( json ) {
+	$.getJSON("https://raw.githubusercontent.com/ekling/dutchman/master/language_strings.json", function( json ) {
 		langdict = json[lang];
 		
 		$('*').each(function() {
