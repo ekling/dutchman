@@ -18,10 +18,15 @@ function clicked() {
 
 		if(coradmin.indexOf(user.value) != -1){
 
-			window.alert("You are logged in as admin " + user.value);
+			//window.alert("You are logged in as admin " + user.value);
+			set_user(user.value, "admin");
+			window.location.href = "admin.html";
+
 
 		} else if(coruser.indexOf(user.value) != -1) {
-			window.alert("You are logged in as user " + user.value)
+			//window.alert("You are logged in as user " + user.value)
+			set_user(user.value, "user");
+			window.location.href = "user.html";
 
 		} else {
 			window.alert("Incorrect username or password!");
@@ -33,4 +38,5 @@ function clicked() {
 
 function guest() {
 	window.alert("You are logged in as a guest!");
+	set_user("guest", "guest");
 }

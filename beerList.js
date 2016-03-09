@@ -1,6 +1,8 @@
 var items = [];
 var beers = [];
 var cart = [];
+var undo = []
+var redo = []
 var cartCount = 0;
 
 /**
@@ -19,12 +21,11 @@ $(document).ready(function(){
 
         $beerAdd.on('click', function() {
           event.stopPropagation();
-          for (var i = 0; i < items.length; i++) {
-            if (items[i].beer_id == this.id && cartCount < 5) {
-              cartCount++;
-              addToCart(items[i])
-              break;
-            }
+          var item = getItemById(this.id);
+          if (item != null && cartCount < 5) {
+            cartCount++;
+            console.log(item);
+            addToCart(item)
           }
         });
 
@@ -73,13 +74,36 @@ function drag(e) {
 function drop(e) {
   e.preventDefault();
   var id = e.dataTransfer.getData("text");
+  var item = getItemById(id);
 
-  for (var i = 0; i < items.length; i++){
-    if(id == items[i].beer_id && cartCount < 5) {
-      addToCart(items[i]);
-      cartCount++;
-      break;
+  if(item != null && cartCount < 5) {
+    console.log(item);
+    addToCart(item);
+    cartCount++;
+  }
+}
+
+/**
+  * Return the item with matching id in items. If no element is found null is returned
+  */
+function getItemById(id){
+  for (var i = 0; i < items.length; i++) {
+    if (id == items[i].beer_id) {
+      return items[i];
     }
+  }
+  return null;
+}
+
+/**
+  * Return id from event or int
+  */
+function getId(e) {
+  if (typeof(e) == "object") {
+    return e.target.id;
+  }
+  else {
+    return e;
   }
 }
 
@@ -87,24 +111,33 @@ function drop(e) {
 * Remove beer from cart
 */
 function beerRemove(e) {
-  var id = e.target.id;
+  var id = getId(e);
 
   if (inCart(id)) {
     updateCart(false, id);
     cartCount--;
+    var action = {
+      action: 'remove',
+      id: id
+    };
+    undo.push(action);
   }
 };
 
+/**
+* Add beer to cart
+*/
 function beerAdd(e) {
-  if (typeof(e) == "object") {
-    var id = e.target.id;
-  } else {
-    id = e;
-  }
+  var id = getId(e);
 
   if (inCart(id) && cartCount < 5) {
     updateCart(true, id)
     cartCount++;
+    var action = {
+      action: 'add',
+      id: id
+    };
+    undo.push(action);
   }
 }
 
@@ -164,12 +197,15 @@ function updateCartSum(increase, amount) {
 function addToCart(item) {
   if (inCart(item.beer_id)) {
     updateCart(true, item.beer_id);
-  } else {
+  }
+  else {
     var cartItem = {
       count: 1,
       item: item
     };
     cart.push(cartItem);
+    $('#cartUndo').css('opacity', 1);
+    $('#cartUndo').css('cursor', 'pointer')
     updateCartSum(true, item.pub_price);
 
     var $cartList = $('#cartList');
@@ -186,9 +222,54 @@ function addToCart(item) {
     $beer.append($beerPubPrice);
     $cartObj.append($beer);
     $cartObj.append($beerCount);
-    $beerAddRemove.append($beerRemove);
     $beerAddRemove.append($beerAdd);
+    $beerAddRemove.append($beerRemove);
     $cartObj.append($beerAddRemove);
     $cartList.append($cartObj);
   }
+  var action = {
+    action: 'add',
+    id: item.beer_id
+  };
+  undo.push(action);
 }
+
+$("#cartUndo").click(function() {
+  if (undo.length > 0) {
+    var action = undo.splice(-1,1);
+    if (action[0].action == 'remove' && cartCount < 5) {
+      addToCart(getItemById(action[0].id));
+      cartCount++;
+      redo.push(action[0]);
+      undo.pop();
+    }
+    else {
+      beerRemove(action[0].id);
+      redo.push(action[0]);
+      undo.pop();
+    }
+    $('#cartRedo').css('opacity', 1);
+    $('#cartRedo').css('cursor', 'pointer')
+  }
+  if (undo.length == 0) {
+    $(this).css('opacity', 0.5);
+    $(this).css('cursor', 'default')
+  }
+});
+
+$("#cartRedo").click(function() {
+  if (redo.length > 0 && cartCount < 5) {
+    var action = redo.splice(-1,1);
+    if (action[0].action == 'add' && cartCount < 5) {
+      cartCount++;
+      addToCart(getItemById(action[0].id));
+    }
+    else {
+      beerRemove(action[0].id);
+    }
+  }
+  if (redo.length == 0) {
+    $(this).css('opacity', 0.5);
+    $(this).css('cursor', 'default')
+  }
+});

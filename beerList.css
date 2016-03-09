@@ -33,12 +33,12 @@ p {
 }
 
 #cart {
-  background-color: white;
+  background-color: #D0D0D0;
   width: 370px;
   height: 400px;
   float: left;
   font-family: Amatic SC;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -52,7 +52,7 @@ p {
 }
 
 .cartObj {
-  background-color: white;
+  background-color: #D0D0D0;
   width: 350px;
   height: 50px;
   border: 2px solid black;
@@ -70,11 +70,33 @@ p {
 }
 
 #cartSumAmount {
-  width: auto;
+  width: 250px;
   height: 20px;
   float: left;
   margin-left: 8px;
   margin-top: 15px;
+}
+
+#cartUndo {
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  float: left;
+  border: 2px solid black;
+  margin-left: 5px;
+  margin-top: 2px;
+  opacity: 0.5;
+}
+
+#cartRedo {
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  float: left;
+  border: 2px solid black;
+  margin-left: 10px;
+  margin-top: 2px;
+  opacity: 0.5;
 }
 
 #beerList {
@@ -128,7 +150,7 @@ p {
 }
 
 .beerItem {
-  background-color: white;
+  background-color: #D0D0D0;
   width: 300px;
   height: 50px;
   border: 2px solid black;
@@ -186,7 +208,7 @@ p {
   float: left;
   margin-top: 15px;
   font-family: Amatic SC;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -197,7 +219,7 @@ p {
   margin-top: 15px;
   margin-left: 7px;
   font-family: Amatic SC;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -208,7 +230,7 @@ p {
   margin-top: 15px;
   margin-left: 7px;
   font-family: Amatic SC;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
 }
 

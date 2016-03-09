@@ -5,7 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<link rel="stylesheet" href="homepage.css"> 
+		 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script type="text/javascript" src="homepage.js"></script>
+		<script type="text/javascript" src="language.js"></script>
+		<script type="text/javascript" src="usermanager.js"></script>
 
 	</head>
 
@@ -15,37 +18,40 @@
 		</div>
 
 		<center>
-			<table class="login">
-				<tr>
-					<td>
-						<p>UserID:</p>
-					</td>
-					<td>
-						<form name="login">
-						<input type="text" id="username">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p>Password:</p>
-					</td>
-					<td>
-						<input type="password" id="password">
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<center>
-							<input type="button" value="Login" onClick="clicked()" id="buttontext">
-						</center>
-					</td>
-				</tr>
-			</table>
-			
-			<div id="guestbutton">
-				<input type="button" value="Login as Guest" onClick="guest()" id="buttontext">
-			
-			</div>
-		</center> 
-	
-	</body>
+		    <input type="button" value="Svenska" onClick="changeLanguageSv()">
+            <input type="button" value="Engelska" onClick="changeLanguageEn()">
+			 <table class="login">
+                <tr>
+                    <td>
+                        <p data-text="username"></p>
+                    </td>
+                    <td>
+                        <form name="login">
+                        <input type="text" id="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p data-text="password"></p>
+                    </td>
+                    <td>
+                        <input type="password" id="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <center>
+                            <input type="button" data-text="login" value="login" onClick="clicked()" id="buttontext">
+                        </center>
+                    </td>
+                </tr>
+            </table>
+            
+            <div id="guestbutton">
+                <input type="button" data-text="guest_login" value="guest_login" onClick="guest()" id="buttontext">
+            
+            </div>
+        </center> 
+    
+    </body>
+</html>
