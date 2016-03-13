@@ -38,6 +38,6 @@ function clicked() {
 }
 
 function guest() {
-	window.alert("You are logged in as a guest!");
 	set_user("guest", "guest");
+	location.replace("beerList.html")
 }
