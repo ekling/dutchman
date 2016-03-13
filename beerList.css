@@ -103,6 +103,37 @@ p {
   opacity: 0.5;
 }
 
+#userCreditText {
+  height: 50px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 9px;
+}
+
+#userCreditAmount {
+  height: 20px;
+  width: 50px;
+  margin-left: 5px;
+  margin-top: 16px;
+  float: left;
+}
+
+#orderButton {
+  width: 86px;
+  height: 35px;
+  float: right;
+  border: 2px solid black;
+  text-align: center;
+  margin-left: 264px;
+  margin-right: 32px;
+  opacity: 0.5;
+}
+
+#searchBeer {
+  width: 80px;
+  height: 20px;
+}
+
 #beerList {
   width: 380px;
   height: 600px;

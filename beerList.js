@@ -4,11 +4,13 @@ var cart = [];
 var undo = []
 var redo = []
 var cartCount = 0;
+var user = sessionStorage.getItem("login");
 
-/**
-*  Fetch beers and populates beer list
-*/
 $(document).ready(function(){
+  /**
+  *  Fetch beers and populates beer list
+  */
+  updateCredit();
   $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=svetor&password=svetor&action=inventory_get',function(inventory){
     items = inventory.payload;
     $.each(items, function(i, item){
@@ -24,7 +26,6 @@ $(document).ready(function(){
           var item = getItemById(this.id);
           if (item != null && cartCount < 5) {
             cartCount++;
-            console.log(item);
             addToCart(item)
           }
         });
@@ -58,6 +59,43 @@ $(document).ready(function(){
       }
     });
   });
+  /**
+    * Search function for beer list
+    */
+  $('#searchBeer').on('keyup', function(){
+    var searchStr = $(this).val().toLowerCase();
+    $(".beerName").each(function(){
+      var str = $(this).html().toLowerCase();
+      str.indexOf(searchStr) !== -1 ? $(this).parent().show() : $(this).parent().hide();
+    });
+  });
+
+  $('#orderButton').on('click', function(){
+    if (cartCount) {
+      for (i = 0; i < cart.length; i++) {
+        for (j = 0; j < cart[i].count; j++) {
+          $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=' + user + '&password=' + user + '&action=purchases_append&beer_id' + cart[i].item.beer_id, function (){
+          });
+        }
+      }
+
+      $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=' + user + '&password=' + user + '&action=payments_append&amount' + $('#cartSumAmount').html(), function (){
+      });
+
+      $('#cartList').empty();
+      cart = [];
+      undo = [];
+      redo = [];
+      cartCount = 0;
+      updateCredit();
+      $('#cartSumAmount').html(0);
+      $('#cartUndo').css('opacity', 0.5);
+      $('#cartUndo').css('cursor', 'default');
+      $('#cartRedo').css('opacity', 0.5);
+      $('#cartRedo').css('cursor', 'default');
+      orderButtonStatus(0);
+    }
+  });
 });
 
 function allowDrop(e) {
@@ -69,15 +107,14 @@ function drag(e) {
 }
 
 /**
-* Adds an item to cart when drag and dropped
-*/
+  * Adds an item to cart when drag and dropped
+  */
 function drop(e) {
   e.preventDefault();
   var id = e.dataTransfer.getData("text");
   var item = getItemById(id);
 
   if(item != null && cartCount < 5) {
-    console.log(item);
     addToCart(item);
     cartCount++;
   }
@@ -108,8 +145,8 @@ function getId(e) {
 }
 
 /**
-* Remove beer from cart
-*/
+  * Remove beer from cart
+  */
 function beerRemove(e) {
   var id = getId(e);
 
@@ -120,13 +157,16 @@ function beerRemove(e) {
       action: 'remove',
       id: id
     };
+    if (cartCount == 0) {
+      orderButtonStatus(0);
+    }
     undo.push(action);
   }
 };
 
 /**
-* Add beer to cart
-*/
+  * Add beer to cart
+  */
 function beerAdd(e) {
   var id = getId(e);
 
@@ -142,8 +182,8 @@ function beerAdd(e) {
 }
 
 /**
-*  Return true if beer with ID id is in cart
-*/
+  *  Return true if beer with ID id is in cart
+  */
 function inCart(id) {
   for (var i = 0; i < cart.length; i++) {
     if (id == cart[i].item.beer_id) {
@@ -154,9 +194,9 @@ function inCart(id) {
 }
 
 /**
-*  Update quantity of item with ID id in cart
-*  +1 if increase = true, else -1
-*/
+  *  Update quantity of item with ID id in cart
+  *  +1 if increase = true, else -1
+  */
 function updateCart(increase, id) {
   var obj = null;
   var index = -1;
@@ -189,10 +229,28 @@ function updateCartSum(increase, amount) {
   $('#cartSumAmount').html(sum);
 }
 
+function updateCredit() {
+  $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=' + user + '&password=' + user + '&action=iou_get',function(inventory){
+    console.log(inventory.payload[0].assets);
+    $("#userCreditAmount").html(inventory.payload[0].assets);
+  });
+}
+
+function orderButtonStatus(status) {
+  if (status) {
+    $('#orderButton').css('opacity', 1);
+    $('#orderButton').css('cursor', 'pointer');
+  }
+  else {
+    $('#orderButton').css('opacity', 0.5);
+    $('#orderButton').css('cursor', 'default');
+  }
+}
+
 /**
-*  Update an item in the cart if the item is in cart,
-*  else creates new item and adds to cart.
-*/
+  *  Update an item in the cart if the item is in cart,
+  *  else creates new item and adds to cart.
+  */
 
 function addToCart(item) {
   if (inCart(item.beer_id)) {
@@ -204,6 +262,7 @@ function addToCart(item) {
       item: item
     };
     cart.push(cartItem);
+    orderButtonStatus(1);
     $('#cartUndo').css('opacity', 1);
     $('#cartUndo').css('cursor', 'pointer')
     updateCartSum(true, item.pub_price);
