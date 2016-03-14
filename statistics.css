@@ -1,13 +1,64 @@
 table {
     border-collapse: collapse;
+	width: 550px;
+	margin: auto;
+	background-color: #D0D0D0;
+	border-radius: 15px;
+	border: 3px solid white;
+}
+
+table, tr {
+	height: 55px;
+	border: 3px solid white;
+	border-radius: 15px;
+}
+
+#users {
+	font-size: 22px;
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid white;
 }
+
 
 #statistics { 
     display: inline-block;
     background: rgba(255, 255, 255, 0.5); 
     font-size: 22px;
+}
+
+#username {
+	float: left;
+	font-size: 23px;
+	margin-left: 160px;
+	margin-top: -5px;
+}
+
+#firstname {
+	float: left;
+	font-size: 23px;
+	margin-left: 70px;
+	margin-top: -5px;
+}
+
+#lastname {
+	float: left;
+	font-size: 23px;
+	margin-left: 110px;
+	margin-top: -5px;
+}
+
+#credits {
+	float: left;
+	font-size: 23px;
+	margin-left: 60px;
+	margin-top: -5px;
+}
+
+#edit {
+	width: 60px;
+	background: url(images/edit.png);
+	background-repeat: no-repeat;
+	background-position: center;
 }

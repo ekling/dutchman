@@ -9,3 +9,9 @@ function purchases_get_all_string() {
     base = base + "&action=" + "purchases_get_all";
     return base;
 }
+
+function iou_get_all_string() {
+	var base = get_api_basestring();
+	base= base + "&action=iou_get_all";
+	return base;
+}
