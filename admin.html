@@ -2,10 +2,15 @@
 <html class="no-js" lang="en" >
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="jquery-ui.min.css">
+        <link rel="stylesheet" href="jquery-ui.theme.min.css">
+        <link rel="stylesheet" href="styles.css">
         
         <link rel="stylesheet" href="homepage.css"> 
-         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script type="text/javascript" src="homepage.js"></script>
         <script type="text/javascript" src="language.js"></script>
         <script type="text/javascript" src="usermanager.js"></script>
@@ -16,9 +21,37 @@
         <div>
             <h1>The Flying Dutchman</h1>
         </div>
-        <a href="statistics.html">Statistics</a>
+<!--         <a href="statistics.html">Statistics</a>
         <br \>
-        Edit VIP User information
+        Edit VIP User information -->
+
+        <div id="content-container">
+  <h1>Tabs</h1>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">Order</a></li>
+      <li><a href="#tabs-2">Inventory</a></li>
+      <li><a href="#tabs-3">Users</a></li>
+    </ul>
+    <div id="tabs-1">
+      
+    </div>
+    <div id="tabs-2">
+      
+    </div>
+    <div id="tabs-3">
+      
+    </div>
+    
+  </div>
+</div>
+
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("#tabs").tabs();
+    });</script>
     
     </body>
 </html>

@@ -1,0 +1,86 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+
+* {
+	font-family:'Ubuntu';
+}
+
+.text-container{
+	width: 50%;
+	margin: auto;
+	min-width: 500px;
+}
+
+#nav-container{
+	width: 300px;
+}
+
+#content-container{
+	position: absolute;
+	left: 300px;
+	top: 25px;
+	overflow: hidden;
+	text-align: center;
+	margin-right: 25px;
+}
+
+#menu{
+	margin:75px 0px 0px 50px;
+}
+
+#accordion{
+	width: 50%;
+	margin: auto;
+	min-width: 250px;
+}
+
+#tabs{
+	width: 75%;
+	margin: auto;
+	min-width: 250px;
+}
+
+#sortable { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	width: 50%;
+	margin:auto;
+	min-width: 450px;
+}
+
+#sortable li { 
+	margin: 3px 3px 3px 0; 
+	padding: 1px; 
+	float: left; 
+	width: 100px; 
+	height: 90px; 
+	font-size: 4em; 
+	text-align: center; }
+
+#slider1-outer-container{
+	width: 800px;
+	min-width: 500px;
+}
+
+#slider1_container {
+		margin: auto;
+	position: relative; 
+	top: 0px; 
+	left: 0px;
+	width: 500px; 
+	height: 400px;
+}
+
+.jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn {
+  position: absolute;
+  cursor: pointer;
+  display: block;
+  background: url(images/a03.png) no-repeat;
+  overflow:hidden;}
+
+.jssora03l { background-position: -3px -33px; }
+.jssora03r { background-position: -63px -33px; }
+.jssora03l:hover { background-position: -123px -33px; }
+.jssora03r:hover { background-position: -183px -33px; }
+.jssora03ldn { background-position: -243px -33px; }
+.jssora03rdn { background-position: -303px -33px; }
