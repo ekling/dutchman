@@ -1,0 +1,128 @@
+#inventory {
+  width: 565px;
+  height: 600px;
+  overflow-y: scroll;
+}
+
+.invBeerItem {
+  width: 545px;
+  height: 70px;
+  background-color: #D0D0D0;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.invBeerName {
+  width: 150px;
+  height: 20px;
+  float:left;
+  margin-top: 14px;
+}
+
+.invBeerSblPrice {
+  width: 75px;
+  height: 20px;
+  float:left;
+  margin-top: 8px;
+}
+
+.invBeerPubPrice {
+  width: 75px;
+  height: 20px;
+  float:left;
+  margin-top: 8px;
+}
+
+.invPriceWrapper {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.invPriceText {
+  width: 50px;
+  height: 20px;
+  margin-top: 8px;
+}
+
+.invBeerPrice {
+  width: 60px;
+  height: 20px;
+  float:left;
+}
+
+.invCountWrapper {
+  width: 50px;
+  height: 50px;
+  float: left;
+}
+
+.invCountText {
+  width: 50px;
+  height: 20px;
+  margin-top: 8px;
+}
+
+.invBeerCount {
+  width: 50px;
+  height: 20px;
+  float:left;
+}
+
+.invEditWrapper {
+  width: 137px;
+  height: 35px;
+  float: left;
+  margin-top: 8px;
+}
+
+.invEdit {
+  width: 50px;
+  height: 20px;
+  border: solid 2px black;
+  float: left;
+  margin-top: 11px;
+  margin-left: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.invEditField {
+  width: 80px;
+  height: 30px;
+  float: left;
+}
+
+.invInputAmount {
+  width: 70px;
+  height: 22px;
+  float: left;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.invEditAccept {
+  width: 22px;
+  height: 17px;
+  background: url(images/accept-button.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.invEditDecline {
+  width: 25px;
+  height: 17px;
+  background: url(images/delete-button.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  float: left;
+  margin-top: 10px;
+  margin-left: 5px;
+  text-align: center;
+  cursor: pointer;
+}
