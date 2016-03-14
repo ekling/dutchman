@@ -131,8 +131,10 @@ p {
 }
 
 #searchBeer {
-  width: 80px;
-  height: 20px;
+  width: 200px;
+  height: 25px;
+  margin-left: 15px;
+  margin-bottom: 5px;
 }
 
 #beerList {
