@@ -14,7 +14,7 @@ $(document).ready(function(){
   $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=svetor&password=svetor&action=inventory_get',function(inventory){
     items = inventory.payload;
     $.each(items, function(i, item){
-      if (item.namn != "") {
+      if (item.namn != "" && item.count > 0) {
         var $beerList = $('#beerList');
         var $beer = $('<div class="beerItem" draggable="true" ondragstart="drag(event)" id="' + item.beer_id + '"></div>');
         var $beerName = $('<div class="beerName">' + item.namn + '</div>');
@@ -231,7 +231,6 @@ function updateCartSum(increase, amount) {
 
 function updateCredit() {
   $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=' + user + '&password=' + user + '&action=iou_get',function(inventory){
-    console.log(inventory.payload[0].assets);
     $("#userCreditAmount").html(inventory.payload[0].assets);
   });
 }
