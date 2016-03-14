@@ -1,40 +1,25 @@
-@import url(http://fonts.googleapis.com/css?family=Ubuntu);
+@import url(https://fonts.googleapis.com/css?family=Amatic+SC:400,700);
 
 * {
-	font-family:'Ubuntu';
+	font-family:'Amatic SC';
+	font-weight: bold;
 }
 
-.text-container{
-	width: 50%;
-	margin: auto;
-	min-width: 500px;
-}
-
-#nav-container{
-	width: 300px;
+li {
+	font-size: 22px;
 }
 
 #content-container{
-	position: absolute;
 	left: 300px;
 	top: 25px;
 	overflow: hidden;
 	text-align: center;
 	margin-right: 25px;
-}
-
-#menu{
-	margin:75px 0px 0px 50px;
-}
-
-#accordion{
-	width: 50%;
-	margin: auto;
-	min-width: 250px;
+	margin-top: 20px;
 }
 
 #tabs{
-	width: 75%;
+	width: 890px;
 	margin: auto;
 	min-width: 250px;
 }

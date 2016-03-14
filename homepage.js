@@ -20,6 +20,7 @@ function clicked() {
 
 			//window.alert("You are logged in as admin " + user.value);
 			set_user(user.value, "admin");
+			sessionStorage.login = user.value;
 			window.location.href = "admin.html";
 
 
