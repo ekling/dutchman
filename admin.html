@@ -8,9 +8,10 @@
         <link rel="stylesheet" href="jquery-ui.min.css">
         <link rel="stylesheet" href="jquery-ui.theme.min.css">
         <link rel="stylesheet" href="styles.css">
-        <link href="admin.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="admin.css"/>
         <link rel="stylesheet" href="statistics.css">
-        
+        <link rel="stylesheet" href="inventory.css"/>
+
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
         <script type="text/javascript" src="api.js"></script>
         <script type="text/javascript" src="homepage.js"></script>
@@ -19,6 +20,7 @@
         <script type="text/javascript" src="beerList.js"></script>
         <script type="text/javascript" src="statistics.js"></script>
         <script type="text/javascript" src="user.js"></script>
+        <script type="text/javascript" src="inventory.js"></script>
 
     </head>
 
@@ -67,7 +69,8 @@
          </div>
         </div>
     <div id="tabs-2">
-      
+      <div id="inventory">
+      </div>
     </div>
     <div id="tabs-3">
       <div id="usertext">
@@ -75,13 +78,12 @@
         <p id="firstname">First name</p>
         <p id="lastname">Last name</p>
         <p id="credits">Credits</p>
-      </div> 
+      </div>
       <div id="users"></div>
     </div>
     <div id="tabs-4">
       <div id="statistics"></div>
     </div>
-    
   </div>
 </div>
 
@@ -90,8 +92,7 @@
     <script type="text/javascript">
     $(document).ready(function(){
       $("#tabs").tabs();
-      $("#tabs-1").load("beerList.html");
     });</script>
-    
+
     </body>
 </html>

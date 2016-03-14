@@ -44,11 +44,9 @@ $(document).ready(function(){
 
         if (item.count < 1) {
           $beer.css('background-color', 'red');
-          $beer.css('opacity', 0.5);
         }
         else if (item.count < 50) {
           $beer.css('background-color', 'yellow');
-          $beer.css('opacity', 0.5);
         }
 
         $edit.on('click', function(){
