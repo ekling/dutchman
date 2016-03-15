@@ -11,7 +11,14 @@
         "redo": "Gör om",
         "total sum": "Total summa:",
         "credit": "Kredit: £",
-        "invEdit": "Ändra"
+        "invEdit": "Ändra",
+        "purchases": "Historik",
+        "inventory": "Lager",
+        "users": "Användare",
+        "newName": "Nytt användarnamn",
+        "newPW": "Nytt lösenord",
+        "newEmail": "Ny mail",
+        "newPhoneNr": "Nytt telefonnummer"
     },
     "en": {
         "welcome": "Welcome",
@@ -25,6 +32,13 @@
         "redo": "Redo",
         "total sum": "Total sum:",
         "credit": "Credit: £",
-        "invEdit": "Edit"
+        "invEdit": "Edit",
+        "purchases": "Purchases",
+        "inventory": "Inventory",
+        "users": "Users",
+        "newName": "New username",
+        "newPW": "New password",
+        "newEmail": "New email",
+        "newPhoneNr": "New phone number"
     }
 }
