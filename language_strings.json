@@ -5,7 +5,8 @@
         "password": "Lösenord",
         "guest_login" : "Logga in som gäst",
         "login": "Logga in",
-        "statistics": "Statistik"
+        "statistics": "Statistik",
+        "order": "Beställ"
     },
     "en": {
         "welcome": "Welcome",
@@ -13,6 +14,7 @@
         "password": "Password",
         "guest_login": "Login as guest",
         "login": "Login",
-        "statistics": "Statistics"
+        "statistics": "Statistics",
+        "order": "Order"
     }
 }
