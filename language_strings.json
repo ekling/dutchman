@@ -16,13 +16,15 @@
         "inventory": "Lager",
         "users": "Användare",
         "newName": "Nytt användarnamn",
-        "newPW": "Nytt lösenord",
+        "newPw": "Nytt lösenord",
         "newEmail": "Ny mail",
         "newPhoneNr": "Nytt telefonnummer",
         "username:": "Användarnamn",
         "firstname": "Förnamn",
         "lastname": "Efternamn",
-        "credits": "Kredit"
+        "credits": "Kredit",
+        "submit": "Skicka",
+        "close": "Avbryt"
     },
     "en": {
         "welcome": "Welcome",
@@ -41,12 +43,14 @@
         "inventory": "Inventory",
         "users": "Users",
         "newName": "New username",
-        "newPW": "New password",
+        "newPw": "New password",
         "newEmail": "New email",
         "newPhoneNr": "New phone number",
         "username:": "Username",
         "firstname": "First name",
         "lastname": "Last name",
-        "credits": "Credits"
+        "credits": "Credits",
+        "submit": "Submit",
+        "close": "Cancel"
     }
 }
