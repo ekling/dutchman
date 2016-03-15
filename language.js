@@ -6,8 +6,8 @@ $( document ).ready(function() {
     lang = get_language();
 	$.getJSON("https://raw.githubusercontent.com/ekling/dutchman/master/language_strings.json", function( json ) {
 		langdict = json[lang];
-    console.log(lang);
     lang == "en" ? $('#cartUndo').css('margin-top', '37px') : $('#cartUndo').css('margin-top', '2px');
+    lang == "en" ? sessionStorage.lang = "en" : sessionStorage.lang = "sv";
 
 		$('*').each(function() {
 		    	if ($(this).attr('data-text')) {

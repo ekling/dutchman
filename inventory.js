@@ -17,7 +17,7 @@ $(document).ready(function(){
         var $beerCountText = $('<div class="invCountText">Count:</div>')
         var $beerCount = $('<div class="invBeerCount" id="count' + item.beer_id + '">' + item.count + '</div>');
         var $editWrapper = $('<div class="invEditWrapper" id="' + item.beer_id + '"></div>');
-        var $edit = $('<div class="invEdit" id="edit' + item.beer_id + '">Edit</div>');
+        var $edit = $('<div class="invEdit" data-text="invEdit" id="edit' + item.beer_id + '">Edit</div>');
         var $editField = $('<div class="invEditField" id="editField' + item.beer_id + '"><input type="text" class="invInputAmount" id="inputAmount' + item.beer_id + '" placeholder="Amount"/></div>');
         var $editAccept = $('<div class="invEditAccept" id="accept' + item.beer_id + '">');
         var $editDecline = $('<div class="invEditDecline" id="decline' + item.beer_id + '">');
@@ -37,6 +37,8 @@ $(document).ready(function(){
         $beer.append($countWrapper);
         $beer.append($editWrapper);
         $inventory.append($beer);
+
+        sessionStorage.getItem("lang") == "en" ? $edit.html("Edit") : $edit.html("Ändra");
 
         $('#editField' + item.beer_id).hide();
         $('#accept' + item.beer_id).hide();
