@@ -13,20 +13,40 @@ $( document ).ready(function() {
             var edit = "<td class='edit'></td>";
             $table.append("<tr>"+username+first_name+last_name+assets+edit+"</tr>");
         });
-        
+
         $table.append("</table>");
         $("#users").html($table);
-        
+
         $(".edit").on('click', function() {
             var $item = $(this).closest("tr");
             var $username = $item.find(".username").text();
             var $first_name = $item.find(".first_name").text();
             var $last_name = $item.find(".last_name").text();
+            $("#dialog").dialog({modal: true, height: 300, width: 300 });
 
+            $("#submitUser").on('click', function() {
+              var $newUsername = $('#newUsername').val().toLowerCase();
+              var $newPassword = $('#newPassword').val().toLowerCase();
+              var $email = $('#newEmail').val().toLowerCase();
+              var $phoneNr = $('#newPhoneNr').val().toLowerCase();
 
+              if ($newUsername != "" && $newPassword != "" && $email != "" && $phoneNr != "") {
+                $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=' + user + '&password=' + user + '&action=user_edit&new_username=' + $newUsername + '&new_password=' + $newPassword + '&first_name=' + $first_name + '&last_name=' + $last_name + '&email=' + $email + '&phone=' + $phoneNr, function (){
+                });
+                $(this).closest('.ui-dialog-content').dialog('close');
+                $('#newUsername').val("");
+                $('#newPassword').val("");
+                $('#newEmail').val("");
+                $('#newPhoneNr').val("");
+              }
             });
+
+            $("#closeUser").on('click', function() {
+              $(this).closest('.ui-dialog-content').dialog('close');
+            });
+        });
     });
 
-    
+
 
 });

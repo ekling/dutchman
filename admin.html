@@ -30,10 +30,10 @@
         <div id="content-container">
   <div id="tabs">
     <ul>
-      <li><a href="#tabs-1">Order</a></li>
-      <li><a href="#tabs-2">Inventory</a></li>
-      <li><a href="#tabs-3">Users</a></li>
-      <li><a href="#tabs-4">Purchases</a></li>
+      <li><a href="#tabs-1" data-text="order">Order</a></li>
+      <li><a href="#tabs-2" data-text="inventory">Inventory</a></li>
+      <li><a href="#tabs-3" data-text="users">Users</a></li>
+      <li><a href="#tabs-4" data-text="purchases">Purchases</a></li>
     </ul>
     <div id="tabs-1">
         <div id="beerandcart">
@@ -84,6 +84,36 @@
     </div>
     <div id="tabs-4">
       <div id="statistics"></div>
+      <div id="dialog">
+        <div id="formWrapper">
+          <div id="newUsernameText" data-text="newName">
+            New userName:
+          </div>
+          <input type="text" id="newUsername" />
+
+          <div id="newPasswordText" data-text="newPw">
+            New password:
+          </div>
+          <input type="text" id="newPassword" />
+
+          <div id="newEmailText" data-text="newEmail">
+            New email:
+          </div>
+          <input type="text" id="newEmail" />
+
+          <div id="newPhoneNrText" data-text="newPhoneNr">
+            New phone number:
+          </div>
+          <input type="text" id="newPhoneNr" />
+
+        </div>
+        <div id="submitUser" data-text="submit">
+          Submit
+        </div>
+        <div id="closeUser" data-text="close">
+          Close
+        </div>
+    </div>
     </div>
   </div>
 </div>
