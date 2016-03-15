@@ -6,7 +6,11 @@
         "guest_login" : "Logga in som gäst",
         "login": "Logga in",
         "statistics": "Statistik",
-        "order": "Beställ"
+        "order": "Beställ",
+        "undo": "Ångra",
+        "redo": "Gör om",
+        "total sum": "Total summa:",
+        "credit": "Kredit:"
     },
     "en": {
         "welcome": "Welcome",
@@ -15,6 +19,10 @@
         "guest_login": "Login as guest",
         "login": "Login",
         "statistics": "Statistics",
-        "order": "Order"
+        "order": "Order",
+        "undo": "Undo",
+        "redo": "Redo",
+        "total sum": "Total sum:",
+        "credit": "Credit:"
     }
 }
