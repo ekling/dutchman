@@ -10,7 +10,8 @@
         "undo": "Ångra",
         "redo": "Gör om",
         "total sum": "Total summa:",
-        "credit": "Kredit: £"
+        "credit": "Kredit: £",
+        "invEdit": "Ändra"
     },
     "en": {
         "welcome": "Welcome",
@@ -23,6 +24,7 @@
         "undo": "Undo",
         "redo": "Redo",
         "total sum": "Total sum:",
-        "credit": "Credit: £"
+        "credit": "Credit: £",
+        "invEdit": "Edit"
     }
 }
