@@ -6,7 +6,7 @@ $( document ).ready(function() {
 
         $.each(payload, function(key, value) {
             var data = value;
-            var username = "<td>"+data["username"]+"</td>";
+            var username = "<td class='username'>"+data["username"]+"</td>";
             var first_name = "<td class='first_name'>"+data["first_name"]+"</td>";
             var last_name = "<td class='last_name'>"+data["last_name"]+"</td>";
             var assets = "<td>"+data["assets"]+"</td>";
@@ -18,9 +18,12 @@ $( document ).ready(function() {
         $("#users").html($table);
         
         $(".edit").on('click', function() {
-                var $item = $(this).closest("tr");
-                var $first_name = $item.find(".first_name").text();
-                var $last_name = $item.find(".last_name").text();
+            var $item = $(this).closest("tr");
+            var $username = $item.find(".username").text();
+            var $first_name = $item.find(".first_name").text();
+            var $last_name = $item.find(".last_name").text();
+
+
             });
     });
 
