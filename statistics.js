@@ -2,7 +2,18 @@ $( document ).ready(function() {
     var statistics_api_string = purchases_get_all_string();
     $.getJSON(statistics_api_string, function( json ) {
         var payload = json["payload"];
-        var $table = $("<table />");
+        var $table = $(
+            "<table />"+
+            "<tr><th data-text='username'></th>"+
+            "<tr><th data-text='username'></th>"+
+            "<tr><th data-text='name'></th>"+
+            "<tr><th data-text='first_name'></th>"+
+            "<tr><th data-text='last_name'></th>"+
+            "<tr><th data-text='username'></th>"+
+            "<tr><th data-text='price'></th>"
+            );
+
+        console.log(payload)
 
         $.each(payload, function(key, value) {
             var data = value;

@@ -2,8 +2,8 @@
 //Walk through the DOM, look for elements with
 //data-text attribute and change their HTML according
 //to the set language
-$( document ).ready(function() {
-    lang = get_language();
+function translate() {
+	lang = get_language();
 	$.getJSON("https://raw.githubusercontent.com/ekling/dutchman/master/language_strings.json", function( json ) {
 		langdict = json[lang];
     lang == "en" ? $('#cartUndo').css('margin-top', '37px') : $('#cartUndo').css('margin-top', '2px');
@@ -26,16 +26,21 @@ $( document ).ready(function() {
 		    	}
 		    })
 	 });
+}
+$( document ).ready(function() {
+    translate();
 });
 
 function changeLanguageEn() {
 	set_language("en");
-	location.reload();
+	translate();
+	//location.reload();
 }
 
 function changeLanguageSv() {
 	set_language("sv")
-	location.reload();
+	translate();
+	//location.reload();
 }
 
 function set_language(language) {

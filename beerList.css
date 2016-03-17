@@ -294,3 +294,9 @@ p {
   margin-top: 17px;
   margin-left: 5px;
 }
+
+#buttontext{
+  font-family: Amatic SC;
+  font-size: 25px;
+  font-weight: bold;
+}

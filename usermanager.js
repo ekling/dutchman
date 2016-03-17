@@ -5,7 +5,12 @@ function set_user(username, userlevel) {
 }
 
 function get_username() {
-    return localStorage.user;
+    if (localStorage.user) {
+            return localStorage.user;
+    }
+    else {
+        return "";
+    }
 }
 
 function get_userlevel() {
@@ -13,6 +18,7 @@ function get_userlevel() {
 }
 
 function logout() {
-    localStorage.removeItem("username");
+    localStorage.removeItem("user");
     localStorage.removeItem("userlevel");
+    window.location.href = "homepage.html";
 }

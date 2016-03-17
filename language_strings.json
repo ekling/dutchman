@@ -24,7 +24,9 @@
         "lastname": "Efternamn",
         "credits": "Kredit",
         "submit": "Skicka",
-        "close": "Avbryt"
+        "close": "Avbryt",
+        "logout": "Logga ut",
+        "guest": "Gäst"
     },
     "en": {
         "welcome": "Welcome",
@@ -51,6 +53,8 @@
         "lastname": "Last name",
         "credits": "Credits",
         "submit": "Submit",
-        "close": "Cancel"
+        "close": "Cancel",
+        "logout": "Logout",
+        "guest": "Guest"
     }
 }

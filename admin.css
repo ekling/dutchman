@@ -316,3 +316,9 @@ p {
   float: left;
   margin-left: 6px;
 }
+
+#buttontext{
+  font-family: Amatic SC;
+  font-size: 25px;
+  font-weight: bold;
+}

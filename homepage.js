@@ -26,7 +26,7 @@ function clicked() {
 
 		} else if(coruser.indexOf(user.value) != -1) {
 			//window.alert("You are logged in as user " + user.value)
-			//set_user(user.value, "user");
+			set_user(user.value, "user");
 			sessionStorage.login = user.value;
 			window.location.href = "beerList.html";
 
