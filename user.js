@@ -1,9 +1,14 @@
+/**
+  * View to display the systems users.
+  */
 $( document ).ready(function() {
+    // Fetches users from api
     var user_api_string = iou_get_all_string();
     $.getJSON(user_api_string, function( json ) {
         var payload = json["payload"];
         var $table = $("<table />");
 
+        // Populates table with users
         $.each(payload, function(key, value) {
             var data = value;
             var username = "<td class='username'>"+data["username"]+"</td>";
@@ -17,6 +22,7 @@ $( document ).ready(function() {
         $table.append("</table>");
         $("#users").html($table);
 
+        // Open form to edit user information
         $(".edit").on('click', function() {
             var $item = $(this).closest("tr");
             var $username = $item.find(".username").text();
@@ -24,6 +30,7 @@ $( document ).ready(function() {
             var $last_name = $item.find(".last_name").text();
             $("#dialog").dialog({modal: true, height: 300, width: 300 });
 
+            // Closes form and makes call to API to update new user information.
             $("#submitUser").on('click', function() {
               var $newUsername = $('#newUsername').val().toLowerCase();
               var $newPassword = $('#newPassword').val().toLowerCase();

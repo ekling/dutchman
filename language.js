@@ -34,13 +34,11 @@ $( document ).ready(function() {
 function changeLanguageEn() {
 	set_language("en");
 	translate();
-	//location.reload();
 }
 
 function changeLanguageSv() {
 	set_language("sv")
 	translate();
-	//location.reload();
 }
 
 function set_language(language) {
@@ -54,7 +52,6 @@ function get_language() {
 	}
 	else
 	{
-		//Todo: handle this default case nicer?
 		return "en";
 	}
 }

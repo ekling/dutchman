@@ -1,6 +1,9 @@
 var user = sessionStorage.getItem("login");
 
 $(document).ready(function(){
+  /**
+  *  Fetch beers and populates beer list
+  */
   $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=svetor&password=svetor&action=inventory_get',function(inventory){
     items = inventory.payload;
     $.each(items, function(i, item){
@@ -51,6 +54,7 @@ $(document).ready(function(){
           $beer.css('background-color', 'yellow');
         }
 
+        // Opens form for editing amount of beers in stock
         $edit.on('click', function(){
           var id = $(this).parent()[0].id;
 
@@ -61,6 +65,7 @@ $(document).ready(function(){
           $('#inputAmount' + id).val('');
         });
 
+        // Closes form for editing amount of beers in stock
         $editDecline.on('click', function() {
           var id = $(this).parent()[0].id;
 
@@ -70,6 +75,7 @@ $(document).ready(function(){
           $('#edit' + id).show();
         });
 
+        // Closes form for editing amount of beers in stock and makes api call to update inventory.
         $editAccept.on('click', function() {
           var id = $(this).parent()[0].id;
           var price = $('#price' + id).html();

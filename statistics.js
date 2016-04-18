@@ -1,4 +1,8 @@
+/**
+  * View to display the users purchases.
+  */
 $( document ).ready(function() {
+    // Fetches purchases from API and creates table for purchases.
     var statistics_api_string = purchases_get_all_string();
     $.getJSON(statistics_api_string, function( json ) {
         var payload = json["payload"];
@@ -13,8 +17,7 @@ $( document ).ready(function() {
             "<tr><th data-text='price'></th>"
             );
 
-        console.log(payload)
-
+        // Populates table with purchases.
         $.each(payload, function(key, value) {
             var data = value;
             var namn = "<td>"+data["namn"]+"</td>";
@@ -27,7 +30,7 @@ $( document ).ready(function() {
             $table.append("<tr>"+timestamp+namn+namn2+price+first_name+
                 last_name+username+"</tr>");
         });
-        
+
         $table.append("</table>");
         $("#statistics").html($table);
 

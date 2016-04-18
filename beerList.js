@@ -133,7 +133,7 @@ function getItemById(id){
 }
 
 /**
-  * Return id from event or int
+  * Return e is a object returns its ID, else return e.
   */
 function getId(e) {
   if (typeof(e) == "object") {
@@ -222,6 +222,9 @@ function updateCart(increase, id) {
   $('#cart' + id).html('X' + obj.count);
 }
 
+/**
+  * Updates the carts sum. If increase == true then add amount to sum, else remove amount from sum.
+  */
 function updateCartSum(increase, amount) {
   amount = parseInt(amount);
   var sum = parseInt($('#cartSumAmount').html());
@@ -229,12 +232,18 @@ function updateCartSum(increase, amount) {
   $('#cartSumAmount').html(sum);
 }
 
+/**
+  * Fetches user credits from API and updates the view.
+  */
 function updateCredit() {
   $.getJSON('http://pub.jamaica-inn.net/fpdb/api.php?username=' + user + '&password=' + user + '&action=iou_get',function(inventory){
     $("#userCreditAmount").html(inventory.payload[0].assets);
   });
 }
 
+/**
+  * If status == true then make order button look "clickable", else make order button look not "clickable"
+  */
 function orderButtonStatus(status) {
   if (status) {
     $('#orderButton').css('opacity', 1);
@@ -266,6 +275,7 @@ function addToCart(item) {
     $('#cartUndo').css('cursor', 'pointer')
     updateCartSum(true, item.pub_price);
 
+    // Creates cart item
     var $cartList = $('#cartList');
     var $cartObj = $('<div class="cartObj" id="cartObj' + cartItem.item.beer_id + '"></div>');
     var $beer = $('<div class="beerCartItem" id="' + cartItem.item.beer_id + '"></div>');
@@ -292,6 +302,9 @@ function addToCart(item) {
   undo.push(action);
 }
 
+/**
+  * Removes latest action made to the cart. If user added a beer, it is removed. If user removed a beer, it is added.
+  */
 $("#cartUndo").click(function() {
   if (undo.length > 0) {
     var action = undo.splice(-1,1);
@@ -315,6 +328,9 @@ $("#cartUndo").click(function() {
   }
 });
 
+/**
+  * Redos the latest action which was undone by the undo.
+  */
 $("#cartRedo").click(function() {
   if (redo.length > 0 && cartCount < 5) {
     var action = redo.splice(-1,1);
