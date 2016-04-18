@@ -3,6 +3,7 @@ function clicked() {
 	var user = document.getElementById('username');
 	var pass = document.getElementById('password');
 
+	// Local DB
 	var coradmin = ['ervtod', 'hirchr', 'jorass', 'saskru', 'svetor'];
 	var coruser = ['aamsta', 'anddar', 'ankov', 'aqulyn', 'aubbla', 'benfau',
 	 'bratam', 'ceznew', 'dansch', 'didwat', 'domolh', 'edraug', 'einyam',
@@ -14,18 +15,16 @@ function clicked() {
 	 'prabar', 'rewes', 'schjou', 'shapet', 'sivan', 'steber', 'sulpen',
 	 'sulstr', 'symzim', 'teojen', 'tohei', 'valpag', 'yevowe', 'zulgor']
 
+	// Redirects to admin page or user page depending on who logged in. Alerts if incorrect information.
 	if(pass.value == user.value){
 
 		if(coradmin.indexOf(user.value) != -1){
-
-			//window.alert("You are logged in as admin " + user.value);
 			set_user(user.value, "admin");
 			sessionStorage.login = user.value;
 			window.location.href = "admin.html";
 
 
 		} else if(coruser.indexOf(user.value) != -1) {
-			//window.alert("You are logged in as user " + user.value)
 			set_user(user.value, "user");
 			sessionStorage.login = user.value;
 			window.location.href = "beerList.html";
