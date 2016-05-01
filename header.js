@@ -1,3 +1,5 @@
+//This functions triggers on each page load
+//It handles the language selection and logout options by attaching these options to the #header div 
 $( document ).ready(function() {
     var username = get_username();
     var logout = "";

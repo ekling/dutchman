@@ -27,24 +27,30 @@ function translate() {
 		    })
 	 });
 }
+
+//Trigger the translate function on load
 $( document ).ready(function() {
     translate();
 });
 
+//Set language and update DOM
 function changeLanguageEn() {
 	set_language("en");
 	translate();
 }
 
+//Set language and update DOM
 function changeLanguageSv() {
 	set_language("sv")
 	translate();
 }
 
+//Store language as a HTML5 localstorage variable
 function set_language(language) {
 	localStorage.language = language;
 }
 
+//Get the currently used language
 function get_language() {
 	if (localStorage.language)
 	{
